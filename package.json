@@ -1,0 +1,17 @@
+{
+  "name": "mr-checkbox",
+  "version": "1.0.0",
+  "description": "Validates a value against a given set of requirements.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "author": "Ryan Aghdam <ryan@ryanaghdam.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ramda": "^0.19.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  }
+}
