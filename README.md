@@ -4,8 +4,8 @@ Mr. Checkbox
 Vaidates a value against a given set of requirements.  Named after a former
 colleague.
 
-Mr. Checkbox is curried; validators can be created with partially-applied
-invocation.
+Mr. Checkbox (the function, not the person) is curried; validators can be
+created with partially-applied invocation.
 
 
 Domain
