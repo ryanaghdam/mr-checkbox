@@ -1,6 +1,6 @@
 'use strict';
 
-var R = require('ramda');
+var autoCurry = require('auto-curry');
 
 function validateRequirements(requirements, value) {
   function validateRule(acc, requirement) {
@@ -14,4 +14,4 @@ function validateRequirements(requirements, value) {
   return requirements.reduce(validateRule, []);
 }
 
-module.exports = R.curry(validateRequirements);
+module.exports = autoCurry(validateRequirements);
