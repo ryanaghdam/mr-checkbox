@@ -87,3 +87,60 @@ validatePassword('hannahhannah');
   => []
 
 ```
+
+
+Or, non-curried invocation.
+
+```javascript
+var mrCheckbox = require('mr-checkbox');
+
+function isPalindrome(value) {
+  return value === value.split('').reverse().join('');
+}
+
+var requirements = [
+  {
+    error: 'Password must 8 characters or longer',
+    validator: function (value) { return value.length > 7; }
+  },
+  {
+    error: 'Password must be 50 characters or shorter',
+    validator: function (value) { return value.length < 51; }
+  },
+  {
+    error: 'Password cannot be "password"',
+    validator: function (value) { return value !== 'password'; }
+  },
+  {
+    error: 'Password cannot start with the letter Q.',
+    validator: function (value) { return value.charAt(0) !== 'Q'; }
+  },
+  {
+    error: 'Password must be a palindrome.',
+    validator: isPalindrome
+  }
+];
+
+validatePassword(requirements, 'password');
+  =>  [
+        'Password cannot be "password"',
+        'Password must be a palindrome.';
+      ]
+
+
+validatePassword(requirements, 'abc');
+  =>  [
+        'Password must 8 characters or longer',
+        'Password must be a palindrome.'
+      ]
+
+validatePassword(requirements, 'QhannahhannahQ');
+  =>  [ 'Password cannot start with the letter Q.' ]
+
+validatePassword(requirements, 'iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii');
+  =>  [ 'Password must be 50 characters or shorter' ]
+
+validatePassword(requirements, 'hannahhannah');
+  => []
+
+```
