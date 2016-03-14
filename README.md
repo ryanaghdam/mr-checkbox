@@ -1,6 +1,8 @@
 Mr. Checkbox
 ============
 
+[![Build Status](https://travis-ci.org/ryanaghdam/mr-checkbox.svg?branch=master)](https://travis-ci.org/ryanaghdam/mr-checkbox)
+
 Vaidates a value against a given set of requirements.  Named after a former
 colleague.
 
