@@ -1,17 +1,17 @@
 'use strict';
 
-var R = require('ramda');
-
 function validateRequirements(requirements, value) {
-  function validateRule(acc, requirement) {
-    if (!requirement.validator(value)) {
-      acc.push(requirement.error);
-    }
-
-    return acc;
+  function validateRules(value) {
+    return requirements
+      .filter(function(requirement) {
+        return !requirement.validator(value);
+      })
+      .map(function(requirement) {
+        return requirement.error;
+      });
   }
 
-  return requirements.reduce(validateRule, []);
+  return arguments.length === 1 ? validateRules : validateRules(value);
 }
 
-module.exports = R.curry(validateRequirements);
+module.exports = validateRequirements;
