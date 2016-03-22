@@ -123,26 +123,26 @@ var requirements = [
   }
 ];
 
-validatePassword(requirements, 'password');
+mrCheckbox(requirements, 'password');
   =>  [
         'Password cannot be "password"',
         'Password must be a palindrome.';
       ]
 
 
-validatePassword(requirements, 'abc');
+mrCheckbox(requirements, 'abc');
   =>  [
         'Password must 8 characters or longer',
         'Password must be a palindrome.'
       ]
 
-validatePassword(requirements, 'QhannahhannahQ');
+mrCheckbox(requirements, 'QhannahhannahQ');
   =>  [ 'Password cannot start with the letter Q.' ]
 
-validatePassword(requirements, 'iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii');
+mrCheckbox(requirements, 'iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii');
   =>  [ 'Password must be 50 characters or shorter' ]
 
-validatePassword(requirements, 'hannahhannah');
+mrCheckbox(requirements, 'hannahhannah');
   => []
 
 ```
