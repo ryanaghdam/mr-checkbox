@@ -1,5 +1,6 @@
+/* eslint func-names: 0, no-console: 0 */
 var mrCheckbox = require('./');
-var R = require('ramda')
+var R = require('ramda');
 
 function isPalindrome(value) {
   return value === value.split('').reverse().join('');
@@ -8,19 +9,19 @@ function isPalindrome(value) {
 var validatePassword = mrCheckbox([
   {
     error: 'Password must 8 characters or longer',
-    validator: function (value) { return value.length > 7; }
+    validator: function(value) { return value.length > 7; }
   },
   {
     error: 'Password must be 50 characters or shorter',
-    validator: function (value) { return value.length < 51; }
+    validator: function(value) { return value.length < 51; }
   },
   {
     error: 'Password cannot be "password"',
-    validator: function (value) { return value !== 'password'; }
+    validator: function(value) { return value !== 'password'; }
   },
   {
     error: 'Password cannot start with the letter Q.',
-    validator: function (value) { return value.charAt(0) !== 'Q'; }
+    validator: function(value) { return value.charAt(0) !== 'Q'; }
   },
   {
     error: 'Password must be a palindrome.',

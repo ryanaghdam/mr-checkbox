@@ -1,10 +1,12 @@
 {
   "name": "mr-checkbox",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Validates a value against a given set of requirements.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test.js"
+    "mocha": "mocha test.js",
+    "eslint": "eslint *.js",
+    "test": "npm run eslint && npm run mocha"
   },
   "author": "Ryan Aghdam <ryan@ryanaghdam.com>",
   "license": "MIT",
@@ -12,6 +14,10 @@
     "auto-curry": "^0.2.0"
   },
   "devDependencies": {
+    "babel-eslint": "^6.0.5",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb-es5": "^1.0.9",
+    "eslint-plugin-react": "^5.2.2",
     "mocha": "^2.4.5",
     "ramda": "^0.19.1"
   },

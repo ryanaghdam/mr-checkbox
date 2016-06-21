@@ -146,3 +146,10 @@ mrCheckbox(requirements, 'hannahhannah');
   => []
 
 ```
+
+Changelog
+---------
+
+- v1.1.1: Adds eslint to project (6/21/16)
+- v1.1.0: Replaces Ramda's curry with auto-curry (3/14/16)
+- v1.0.0: Initial commit (3/11/16)
