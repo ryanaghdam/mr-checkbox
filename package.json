@@ -6,7 +6,10 @@
   "scripts": {
     "mocha": "mocha test.js",
     "eslint": "eslint *.js",
-    "test": "npm run eslint && npm run mocha"
+    "test": "npm run eslint && npm run mocha",
+    "patch-release": "npm test && npm version patch && npm publish && git push --follow-tags",
+    "minor-release": "npm test && npm version minor && npm publish && git push --follow-tags",
+    "major-release": "npm test && npm version major && npm publish && git push --follow-tags"
   },
   "author": "Ryan Aghdam <ryan@ryanaghdam.com>",
   "license": "MIT",
